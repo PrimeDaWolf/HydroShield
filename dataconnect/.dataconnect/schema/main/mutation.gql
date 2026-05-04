@@ -1,0 +1,674 @@
+extend type Mutation {
+  """
+  ✨ Insert a single `Alert` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  alert_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Alert_Data!
+  ): Alert_KeyOutput! @fdc_generated(from: "Alert", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `FeedingEvent` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  feedingEvent_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: FeedingEvent_Data!
+  ): FeedingEvent_KeyOutput! @fdc_generated(from: "FeedingEvent", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `HealthObservation` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  healthObservation_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: HealthObservation_Data!
+  ): HealthObservation_KeyOutput! @fdc_generated(from: "HealthObservation", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `SensorReading` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  sensorReading_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: SensorReading_Data!
+  ): SensorReading_KeyOutput! @fdc_generated(from: "SensorReading", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `Tank` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  tank_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: Tank_Data!
+  ): Tank_KeyOutput! @fdc_generated(from: "Tank", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert a single `User` into the table and return its key. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insert(
+    """
+    Data object to insert into the table.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: INSERT_SINGLE)
+  """
+  ✨ Insert `Alert` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  alert_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Alert_Data!]!
+  ): [Alert_KeyOutput!]! @fdc_generated(from: "Alert", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `FeedingEvent` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  feedingEvent_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [FeedingEvent_Data!]!
+  ): [FeedingEvent_KeyOutput!]! @fdc_generated(from: "FeedingEvent", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `HealthObservation` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  healthObservation_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [HealthObservation_Data!]!
+  ): [HealthObservation_KeyOutput!]! @fdc_generated(from: "HealthObservation", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `SensorReading` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  sensorReading_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [SensorReading_Data!]!
+  ): [SensorReading_KeyOutput!]! @fdc_generated(from: "SensorReading", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `Tank` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  tank_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [Tank_Data!]!
+  ): [Tank_KeyOutput!]! @fdc_generated(from: "Tank", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert `User` objects into the table and return their keys. Columns not specified in `data` will receive defaults (e.g. `null`).
+  """
+  user_insertMany(
+    """
+    List of data objects to insert into the table.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: INSERT_MULTIPLE)
+  """
+  ✨ Insert or update a single `Alert` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Alert`.
+  """
+  alert_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Alert_Data!
+  ): Alert_KeyOutput! @fdc_generated(from: "Alert", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `FeedingEvent` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `FeedingEvent`.
+  """
+  feedingEvent_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: FeedingEvent_Data!
+  ): FeedingEvent_KeyOutput! @fdc_generated(from: "FeedingEvent", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `HealthObservation` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `HealthObservation`.
+  """
+  healthObservation_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: HealthObservation_Data!
+  ): HealthObservation_KeyOutput! @fdc_generated(from: "HealthObservation", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `SensorReading` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `SensorReading`.
+  """
+  sensorReading_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: SensorReading_Data!
+  ): SensorReading_KeyOutput! @fdc_generated(from: "SensorReading", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `Tank` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Tank`.
+  """
+  tank_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: Tank_Data!
+  ): Tank_KeyOutput! @fdc_generated(from: "Tank", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update a single `User` into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsert(
+    """
+    Data object to insert or update if it already exists.
+    """
+    data: User_Data!
+  ): User_KeyOutput! @fdc_generated(from: "User", purpose: UPSERT_SINGLE)
+  """
+  ✨ Insert or update `Alert` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Alert`.
+  """
+  alert_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Alert_Data!]!
+  ): [Alert_KeyOutput!]! @fdc_generated(from: "Alert", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `FeedingEvent` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `FeedingEvent`.
+  """
+  feedingEvent_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [FeedingEvent_Data!]!
+  ): [FeedingEvent_KeyOutput!]! @fdc_generated(from: "FeedingEvent", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `HealthObservation` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `HealthObservation`.
+  """
+  healthObservation_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [HealthObservation_Data!]!
+  ): [HealthObservation_KeyOutput!]! @fdc_generated(from: "HealthObservation", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `SensorReading` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `SensorReading`.
+  """
+  sensorReading_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [SensorReading_Data!]!
+  ): [SensorReading_KeyOutput!]! @fdc_generated(from: "SensorReading", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `Tank` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `Tank`.
+  """
+  tank_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [Tank_Data!]!
+  ): [Tank_KeyOutput!]! @fdc_generated(from: "Tank", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Insert or update `User` objects into the table, based on the primary key. Returns the key of the newly inserted or existing updated `User`.
+  """
+  user_upsertMany(
+    """
+    List of data objects to insert or update if it already exists.
+    """
+    data: [User_Data!]!
+  ): [User_KeyOutput!]! @fdc_generated(from: "User", purpose: UPSERT_MULTIPLE)
+  """
+  ✨ Update a single `Alert` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Alert` or `null` if not found.
+  """
+  alert_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Alert_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Alert_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Alert_Data!
+  ): Alert_KeyOutput @fdc_generated(from: "Alert", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `FeedingEvent` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `FeedingEvent` or `null` if not found.
+  """
+  feedingEvent_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: FeedingEvent_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: FeedingEvent_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: FeedingEvent_Data!
+  ): FeedingEvent_KeyOutput @fdc_generated(from: "FeedingEvent", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `HealthObservation` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `HealthObservation` or `null` if not found.
+  """
+  healthObservation_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: HealthObservation_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: HealthObservation_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: HealthObservation_Data!
+  ): HealthObservation_KeyOutput @fdc_generated(from: "HealthObservation", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `SensorReading` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `SensorReading` or `null` if not found.
+  """
+  sensorReading_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: SensorReading_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: SensorReading_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: SensorReading_Data!
+  ): SensorReading_KeyOutput @fdc_generated(from: "SensorReading", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `Tank` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `Tank` or `null` if not found.
+  """
+  tank_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Tank_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Tank_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: Tank_Data!
+  ): Tank_KeyOutput @fdc_generated(from: "Tank", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update a single `User` based on `id`, `key` or `first`, setting columns specified in `data`. Returns the key of the updated `User` or `null` if not found.
+  """
+  user_update(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+
+    """
+    Data object containing fields to be updated.
+    """
+    data: User_Data!
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: UPDATE_SINGLE)
+  """
+  ✨ Update `Alert` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  alert_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Alert_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Alert_Data!
+  ): Int! @fdc_generated(from: "Alert", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `FeedingEvent` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  feedingEvent_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: FeedingEvent_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: FeedingEvent_Data!
+  ): Int! @fdc_generated(from: "FeedingEvent", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `HealthObservation` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  healthObservation_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: HealthObservation_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: HealthObservation_Data!
+  ): Int! @fdc_generated(from: "HealthObservation", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `SensorReading` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  sensorReading_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: SensorReading_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: SensorReading_Data!
+  ): Int! @fdc_generated(from: "SensorReading", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `Tank` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  tank_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: Tank_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: Tank_Data!
+  ): Int! @fdc_generated(from: "Tank", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Update `User` objects matching `where` conditions (or `all`, if true) according to `data`. Returns the number of rows updated.
+  """
+  user_updateMany(
+    """
+    Filter condition to specify which rows to update.
+    """
+    where: User_Filter
+
+    """
+    Set to true to update all rows.
+    """
+    all: Boolean = false
+
+    """
+    Data object containing fields to update.
+    """
+    data: User_Data!
+  ): Int! @fdc_generated(from: "User", purpose: UPDATE_MULTIPLE)
+  """
+  ✨ Delete a single `Alert` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  alert_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Alert_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Alert_FirstRow
+  ): Alert_KeyOutput @fdc_generated(from: "Alert", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `FeedingEvent` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  feedingEvent_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: FeedingEvent_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: FeedingEvent_FirstRow
+  ): FeedingEvent_KeyOutput @fdc_generated(from: "FeedingEvent", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `HealthObservation` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  healthObservation_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: HealthObservation_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: HealthObservation_FirstRow
+  ): HealthObservation_KeyOutput @fdc_generated(from: "HealthObservation", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `SensorReading` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  sensorReading_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: SensorReading_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: SensorReading_FirstRow
+  ): SensorReading_KeyOutput @fdc_generated(from: "SensorReading", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `Tank` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  tank_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Tank_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Tank_FirstRow
+  ): Tank_KeyOutput @fdc_generated(from: "Tank", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete a single `User` based on `id`, `key` or `first` and return its key (or `null` if not found).
+  """
+  user_delete(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+  ): User_KeyOutput @fdc_generated(from: "User", purpose: DELETE_SINGLE)
+  """
+  ✨ Delete `Alert` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  alert_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Alert_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Alert", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `FeedingEvent` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  feedingEvent_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: FeedingEvent_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "FeedingEvent", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `HealthObservation` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  healthObservation_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: HealthObservation_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "HealthObservation", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `SensorReading` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  sensorReading_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: SensorReading_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "SensorReading", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `Tank` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  tank_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: Tank_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "Tank", purpose: DELETE_MULTIPLE)
+  """
+  ✨ Delete `User` objects matching `where` conditions (or `all`, if true). Returns the number of rows deleted.
+  """
+  user_deleteMany(
+    """
+    Filter condition to specify which rows to delete.
+    """
+    where: User_Filter
+
+    """
+    Set to true to delete all rows.
+    """
+    all: Boolean = false
+  ): Int! @fdc_generated(from: "User", purpose: DELETE_MULTIPLE)
+}

@@ -1,0 +1,49 @@
+type User @table {
+  displayName: String!
+  email: String!
+  createdAt: Timestamp!
+  photoUrl: String
+}
+
+type Tank @table {
+  user: User
+  name: String!
+  location: String!
+  volume: Float!
+  createdAt: Timestamp!
+  description: String
+  speciesType: String
+}
+
+type SensorReading @table {
+  tank: Tank
+  timestamp: Timestamp!
+  parameterType: String!
+  value: Float!
+  unit: String
+}
+
+type FeedingEvent @table {
+  tank: Tank
+  timestamp: Timestamp!
+  feedType: String!
+  quantity: Float!
+  notes: String
+}
+
+type HealthObservation @table {
+  tank: Tank
+  timestamp: Timestamp!
+  observationType: String!
+  details: String!
+  severity: String
+}
+
+type Alert @table {
+  tank: Tank
+  timestamp: Timestamp!
+  message: String!
+  parameterType: String!
+  triggeredValue: Float!
+  resolvedAt: Timestamp
+}

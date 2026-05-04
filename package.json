@@ -1,0 +1,26 @@
+{
+  "name": "esp32-hydro-monitor",
+  "version": "1.0.0",
+  "description": "ESP32 Hydro Shield - Real-time sensor monitoring dashboard",
+  "main": "serialServer.js",
+  "scripts": {
+    "start": "node serialServer.js",
+    "dev": "nodemon serialServer.js"
+  },
+  "keywords": [
+    "esp32",
+    "sensors",
+    "monitoring"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@serialport/parser-readline": "^11.0.0",
+    "cors": "^2.8.6",
+    "express": "^4.22.1",
+    "serialport": "^11.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

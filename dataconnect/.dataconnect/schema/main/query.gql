@@ -1,0 +1,320 @@
+extend type Query {
+  """
+  ✨ Look up a single `Alert` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  alert(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Alert_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Alert_FirstRow
+  ): Alert @fdc_generated(from: "Alert", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `FeedingEvent` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  feedingEvent(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: FeedingEvent_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: FeedingEvent_FirstRow
+  ): FeedingEvent @fdc_generated(from: "FeedingEvent", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `HealthObservation` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  healthObservation(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: HealthObservation_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: HealthObservation_FirstRow
+  ): HealthObservation @fdc_generated(from: "HealthObservation", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `SensorReading` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  sensorReading(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: SensorReading_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: SensorReading_FirstRow
+  ): SensorReading @fdc_generated(from: "SensorReading", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `Tank` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  tank(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: Tank_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: Tank_FirstRow
+  ): Tank @fdc_generated(from: "Tank", purpose: QUERY_SINGLE)
+  """
+  ✨ Look up a single `User` based on `id`, `key` or `first` and return selected fields (or `null` if not found).
+  """
+  user(
+    """
+    The unique ID of the object.
+    """
+    id: UUID
+
+    """
+    The key used to identify the object.
+    """
+    key: User_Key
+
+    """
+    Fetch the first row based on the filters and ordering.
+    """
+    first: User_FirstRow
+  ): User @fdc_generated(from: "User", purpose: QUERY_SINGLE)
+  """
+  ✨ List `Alert` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  alerts(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Alert_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Alert_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Alert_Having
+  ): [Alert!]! @fdc_generated(from: "Alert", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `FeedingEvent` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  feedingEvents(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: FeedingEvent_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [FeedingEvent_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: FeedingEvent_Having
+  ): [FeedingEvent!]! @fdc_generated(from: "FeedingEvent", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `HealthObservation` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  healthObservations(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: HealthObservation_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [HealthObservation_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: HealthObservation_Having
+  ): [HealthObservation!]! @fdc_generated(from: "HealthObservation", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `SensorReading` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  sensorReadings(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: SensorReading_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [SensorReading_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: SensorReading_Having
+  ): [SensorReading!]! @fdc_generated(from: "SensorReading", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `Tank` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  tanks(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: Tank_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [Tank_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: Tank_Having
+  ): [Tank!]! @fdc_generated(from: "Tank", purpose: QUERY_MULTIPLE)
+  """
+  ✨ List `User` objects in the table and return selected fields, optionally filtered by `where` conditions
+  """
+  users(
+    """
+    Filter condition to narrow down the query results.
+    """
+    where: User_Filter
+
+    """
+    Order the query results by specific fields.
+    """
+    orderBy: [User_Order!]
+
+    """
+    Number of rows to skip before starting to return the results.
+    """
+    offset: Int
+
+    """
+    Maximum number of rows to return (defaults to 100 rows).
+    """
+    limit: Int = 100
+
+    """
+    Set to true to return distinct results.
+    """
+    distinct: Boolean = false
+
+    """
+    Filter condition to apply to the groups of aggregate queries.
+    """
+    having: User_Having
+  ): [User!]! @fdc_generated(from: "User", purpose: QUERY_MULTIPLE)
+}

@@ -1,0 +1,523 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0px;
+  height: 100%;
+}
+/* a blue color as a generic focus style */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline: -webkit-focus-ring-color auto 5px !important;
+}
+a {
+  text-decoration: none;
+}
+/* @FONTWARNING[{"type": "restricted", "family": "Inter-Regular", "weight": "400", "style": "normal", "allowsCrossOrigin": false}] */
+
+@font-face {
+  font-family: "Inter-Regular";
+  font-size: smaller;
+  src: local("Inter-Regular");
+}
+
+
+/* =============================================
+   Original style.css content injected below
+   ============================================= */
+
+.desktop {
+  width: min(1280px, 100% - 24px);
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: #ffffff;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  gap: 22px;
+  padding-bottom: 24px;
+}
+
+/* Header */
+.desktop .head {
+  position: relative;
+  width: 100%;
+  min-height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4b96ff;
+  border-radius: 0 0 20px 20px;
+  padding: 18px 16px;
+}
+
+/* ---- Emergency Stop button ---- */
+.estop-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.15s, box-shadow 0.15s;
+  z-index: 10;
+}
+
+.estop-inactive {
+  background-color: #c0392b;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(192, 57, 43, 0.5);
+}
+
+.estop-inactive:hover {
+  background-color: #a93226;
+  box-shadow: 0 3px 12px rgba(169, 50, 38, 0.7);
+}
+
+.estop-active {
+  background-color: #f1c40f;
+  color: #333;
+  box-shadow: 0 2px 10px rgba(241, 196, 15, 0.7);
+  animation: estop-pulse 1s infinite;
+}
+
+@keyframes estop-pulse {
+  0%, 100% { box-shadow: 0 2px 10px rgba(241, 196, 15, 0.7); }
+  50%       { box-shadow: 0 2px 20px rgba(241, 196, 15, 1); }
+}
+
+.desktop .text-wrapper-4 {
+  margin-top: 0;
+  width: auto;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+}
+
+/* ---- Sensor Cards Row ---- */
+.desktop .sensors-row {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  padding: 0 12px;
+}
+
+/* Individual sensor cards */
+.desktop .sensor-card {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+}
+
+/* ---- Pumps Row ---- */
+.desktop .pumps-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  padding: 0 12px;
+}
+
+.desktop .pump-card {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+}
+
+.desktop .pump-card .pump-photo {
+  position: absolute;
+  top: 105px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 155px;
+  height: 135px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* ---- Shared sensor card inner elements ---- */
+.desktop .rectangle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.desktop .div {
+  width: 100%;
+  height: 58px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+/* ---- Air Pump (flow-sens) card ---- */
+
+.desktop .text-wrapper {
+  position: absolute;
+  top: 4px;
+  left: 87px;
+  width: 150px;
+  -webkit-text-stroke: 1px #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .fi-sr-wind {
+  position: absolute;
+  top: 105px;
+  left: 96px;
+  width: 135px;
+  height: 135px;
+}
+
+/* ---- Flow Sensor (air-pump) wide card ---- */
+.desktop .air-pump {
+  position: relative;
+  width: calc(100% - 24px);
+  margin: 0 12px;
+  min-height: 235px;
+}
+
+
+.desktop .rectangle-2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.desktop .rectangle-3 {
+  width: 100%;
+  height: 62px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: 1px solid;
+  border-color: #000000;
+}
+
+.desktop .text-wrapper-2 {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 24px);
+  text-align: center;
+  -webkit-text-stroke: 1px #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: clamp(1.1rem, 2vw, 1.7rem);
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.desktop .fi-sr-gas-pump {
+  position: absolute;
+  top: 60px;
+  margin: 0;
+  width: 800px;
+  height: 128px;
+  overflow: hidden;
+}
+
+.desktop .vector {
+  position: absolute;
+  width: 75.00%;
+  height: 70.83%;
+  top: 29.17%;
+  left: 25.00%;
+}
+
+/* ---- Water Temperature card ---- */
+
+/* ---- Level Sensor card ---- */
+
+.desktop .text-wrapper-3 {
+  position: absolute;
+  text-align: center;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 28px);
+  -webkit-text-stroke: 1px #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.level-status-grid {
+  position: absolute;
+  top: 70px;
+  left: 14px;
+  width: calc(100% - 28px);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.level-status-item {
+  border: 1px solid #d2dbe6;
+  border-radius: 16px;
+  padding: 14px 12px;
+  background: #f9fbff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+}
+
+.level-status-title {
+  margin: 0 0 8px 0;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: #133052;
+  text-align: center;
+}
+
+.level-action-text {
+  margin-top: 8px;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 11px;
+  color: #475569;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.level-status-pill {
+  min-width: 100px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.level-status-on {
+  background: #27ae60;
+  color: #fff;
+}
+
+.level-status-off {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.level-status-unknown {
+  background: #d0d7e2;
+  color: #475569;
+}
+
+.temperature-split {
+  position: absolute;
+  top: 60px;
+  left: 12px;
+  width: calc(100% - 24px);
+  height: calc(100% - 72px);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: unset;
+  gap: 12px;}
+
+.temp-mini-item {
+  border: 1px solid #d2dbe6;
+  border-radius: 10px;
+  padding: 4px 6px;
+  background: #f9fbff;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.temp-mini-title {
+  margin: 0 0 4px 0;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 11px;
+  text-align: center;
+  color: #133052;
+  line-height: 1.1;
+}
+
+.temp-mini-chart {
+  flex: 1;
+  min-height: 0;
+}
+
+.temp-mini-chart canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.desktop .fi-ss-raindrops {
+  position: absolute;
+  top: 105px;
+  left: 118px;
+  width: 100px;
+  height: 135px;
+  border-radius: 30px;
+  background-image: url(./img/vector-2.svg);
+  background-size: 100% 100%;
+}
+
+/* ---- Chart Containers ---- */
+.chart-container {
+  position: absolute;
+  top: 72px;
+  left: 15px;
+  width: calc(100% - 30px);
+  height: calc(100% - 88px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-container canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.chart-container-wide {
+  position: absolute;
+  top: 74px;
+  left: 20px;
+  width: calc(100% - 40px);
+  height: calc(100% - 92px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 1080px) {
+  .desktop {
+    width: min(1280px, 100% - 16px);
+    gap: 14px;
+  }
+
+  .desktop .sensors-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .desktop .flow-sens {
+    grid-column: 1 / -1;
+    min-height: 270px;
+  }
+}
+
+@media (max-width: 760px) {
+  .desktop .sensors-row,
+  .desktop .pumps-row {
+    grid-template-columns: 1fr;
+  }
+
+  .desktop .air-pump,
+  .desktop .sensors-row,
+  .desktop .pumps-row {
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .desktop .sensor-card,
+  .desktop .pump-card {
+    min-height: 280px;
+  }
+
+  .temperature-split {
+    gap: 10px;
+  }
+
+  .temp-mini-title {
+    font-size: 10px;
+  }
+}
+
+.chart-container-wide canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* ---- Pump toggle buttons ---- */
+.pump-toggle-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  min-width: 48px;
+  height: 28px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 14px;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.pump-toggle-off {
+  background-color: #d0d7e2;
+  color: #555;
+}
+
+.pump-toggle-on {
+  background-color: #27ae60;
+  color: #fff;
+}
+
+/* ---- Semantic element resets ---- */
+
+:root {
+  --primary-color: rgba(0, 147, 121, 1);
+  --secondary-color: rgba(1, 109, 90, 1);
+  --grey-1-color: rgba(184, 184, 184, 1);
+  --grey-2-color: rgba(134, 134, 134, 1);
+  --white-color: rgba(255, 255, 255, 1);
+}

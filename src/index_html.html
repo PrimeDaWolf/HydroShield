@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Hydro Shield</title>
+
+    <link rel="stylesheet" href="../css/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <main class="desktop">
+      <!-- Header -->
+      <header class="head">
+        <h1 class="text-wrapper-4">HYDRO SHIELD</h1>
+        <button id="eStopBtn" class="estop-btn estop-inactive" onclick="toggleEStop()">
+          &#9888; PARO DE EMERGENCIA
+        </button>
+      </header>
+      <!-- Sensor Cards Row -->
+      <section class="sensors-row">
+        
+        
+        
+        <!-- Level Sensor Card -->
+        
+        
+        
+        <article class="level sensor-card">
+          <div class="rectangle"></div>
+          <div class="div"></div>
+          <h2 class="text-wrapper-3">Sensores de nivel</h2>
+          <div class="level-status-grid">
+            <section class="level-status-item">
+              <h3 class="level-status-title">Tanque principal</h3>
+              <div id="levelStatus1" class="level-status-pill level-status-unknown" aria-live="polite">Esperando…</div>
+              <div id="levelAction1" class="level-action-text">Esperando…</div>
+            </section>
+            <section class="level-status-item">
+              <h3 class="level-status-title">Tanque pequeño 1</h3>
+              <div id="levelStatus2" class="level-status-pill level-status-unknown" aria-live="polite">Esperando…</div>
+              <div id="levelAction2" class="level-action-text">Esperando…</div>
+            </section>
+            <section class="level-status-item">
+              <h3 class="level-status-title">Tanque pequeño 2</h3>
+              <div id="levelStatus3" class="level-status-pill level-status-unknown" aria-live="polite">Esperando…</div>
+              <div id="levelAction3" class="level-action-text">Esperando…</div>
+            </section>
+          </div>
+        </article>
+        
+        
+        
+        
+        <!-- Water Temperature Card -->
+        
+        
+        <article class="wa-temp sensor-card">
+            <div class="rectangle"></div>
+          <div class="div"></div>
+          <h2 class="text-wrapper-3">Temperatura del agua (3 sensores)</h2>
+          <div class="temperature-split">
+            <section class="temp-mini-item">
+              <h3 id="tempLabel1" class="temp-mini-title">Tanque principal (esperando...)</h3>
+              <div class="temp-mini-chart">
+                <canvas id="temperatureCanvas1" aria-label="Sensor de temperatura del agua 1"></canvas>
+              </div>
+            </section>
+            <section class="temp-mini-item">
+              <h3 id="tempLabel2" class="temp-mini-title">Tanque 1 (esperando...)</h3>
+              <div class="temp-mini-chart">
+                <canvas id="temperatureCanvas2" aria-label="Sensor de temperatura del agua 2"></canvas>
+              </div>
+            </section>
+            <section class="temp-mini-item">
+              <h3 id="tempLabel3" class="temp-mini-title">Tanque 2 (esperando ...)</h3>
+              <div class="temp-mini-chart">
+                <canvas id="temperatureCanvas3" aria-label="Sensor de temperatura del agua 3"></canvas>
+              </div>
+            </section>
+          </div>
+        </article>
+        
+        
+        
+        
+        <!-- Air Pump Card -->
+
+
+
+        <article class="flow-sens sensor-card">
+          <div class="rectangle"></div>
+          <div class="div"></div>
+          <h2 class="text-wrapper-3">Bomba de aire</h2>
+          <button id="toggleAirPump" class="pump-toggle-btn pump-toggle-off" onclick="togglePump('airPump', 'toggleAirPump')">OFF</button>
+          <div class="chart-container">
+            <canvas id="airPumpCanvas" aria-label="Display de la bomba de aire"></canvas>
+          </div>
+        </article>
+      </section>
+
+
+
+      <!-- Flow Sensor Card (full width) -->
+      <article class="air-pump sensor-card-wide">
+        <div class="rectangle-2"></div>
+        <div class="rectangle-3"></div>
+        <h2 class="text-wrapper-2">Sensor de flujo</h2>
+        <button id="toggleMainPump" class="pump-toggle-btn pump-toggle-off" onclick="togglePump('mainPump', 'toggleMainPump')">OFF</button>
+        <div class="chart-container-wide">
+          <canvas id="flowSensorCanvas" aria-label="Display del sensor de flujo"></canvas>
+        </div>
+        </article>
+      <!-- Water Pump Cards Row -->
+      <section class="pumps-row">
+        <article class="pump-card sensor-card">
+          <div class="rectangle"></div>
+          <div class="div"></div>
+          <h2 class="text-wrapper-3">Tanque pequeño 1</h2>
+          <button id="toggleWaterPump1" class="pump-toggle-btn pump-toggle-off" onclick="togglePump('smallPump1', 'toggleWaterPump1')">OFF</button>
+          <div class="chart-container">
+            <canvas id="waterPump1Canvas" aria-label="Water Pump 1 display"></canvas>
+          </div>
+        </article>
+        <article class="pump-card sensor-card">
+          <div class="rectangle"></div>
+          <div class="div"></div>
+          <h2 class="text-wrapper-3">Tanque pequeño 2</h2>
+          <button id="toggleWaterPump2" class="pump-toggle-btn pump-toggle-off" onclick="togglePump('smallPump2', 'toggleWaterPump2')">OFF</button>
+          <div class="chart-container">
+            <canvas id="waterPump2Canvas" aria-label="Water Pump 2 display"></canvas>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script src="../js/index.js"></script>
+    <script src="../js/webserial.js"></script>
+  </body>
+</html>

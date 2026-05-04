@@ -1,0 +1,56 @@
+extend type Alert {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "Alert", purpose: IMPLICIT_KEY_FIELD)
+  """
+  ✨ Implicit foreign key field based on `Alert`.`tank`. It must match the value of `Tank`.`id`. See `@ref` for how to customize it.
+  """
+  tankId: UUID @fdc_generated(from: "Alert.tank", purpose: IMPLICIT_REF_FIELD)
+}
+extend type FeedingEvent {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "FeedingEvent", purpose: IMPLICIT_KEY_FIELD)
+  """
+  ✨ Implicit foreign key field based on `FeedingEvent`.`tank`. It must match the value of `Tank`.`id`. See `@ref` for how to customize it.
+  """
+  tankId: UUID @fdc_generated(from: "FeedingEvent.tank", purpose: IMPLICIT_REF_FIELD)
+}
+extend type HealthObservation {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "HealthObservation", purpose: IMPLICIT_KEY_FIELD)
+  """
+  ✨ Implicit foreign key field based on `HealthObservation`.`tank`. It must match the value of `Tank`.`id`. See `@ref` for how to customize it.
+  """
+  tankId: UUID @fdc_generated(from: "HealthObservation.tank", purpose: IMPLICIT_REF_FIELD)
+}
+extend type SensorReading {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "SensorReading", purpose: IMPLICIT_KEY_FIELD)
+  """
+  ✨ Implicit foreign key field based on `SensorReading`.`tank`. It must match the value of `Tank`.`id`. See `@ref` for how to customize it.
+  """
+  tankId: UUID @fdc_generated(from: "SensorReading.tank", purpose: IMPLICIT_REF_FIELD)
+}
+extend type Tank {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "Tank", purpose: IMPLICIT_KEY_FIELD)
+  """
+  ✨ Implicit foreign key field based on `Tank`.`user`. It must match the value of `User`.`id`. See `@ref` for how to customize it.
+  """
+  userId: UUID @fdc_generated(from: "Tank.user", purpose: IMPLICIT_REF_FIELD)
+}
+extend type User {
+  """
+  ✨ Implicit primary key field. It's a UUID column default to a generated new value. See `@table` for how to customize it.
+  """
+  id: UUID! @default(expr: "uuidV4()") @fdc_generated(from: "User", purpose: IMPLICIT_KEY_FIELD)
+}
